@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+li {
+    display: inline-block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+div.header {
+    background-color: #e5e5e5;
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Change color on hover */
+
+li:hover {
+    background-color: #555;
+    color: white;
+}
