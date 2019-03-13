@@ -1,0 +1,23 @@
+div.container {
+    text-align: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+li {
+    display: block;
+    color: #000;
+    margin: 0pt 200pt;
+    padding: 8pt 16pt;
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: #555;
+    color: white;
+}

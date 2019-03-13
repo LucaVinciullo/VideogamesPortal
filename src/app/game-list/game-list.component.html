@@ -1,3 +1,5 @@
-<ul>
-    <li *ngFor="let item of gameList">{{item.description}}</li>
-</ul>
+<div class="container">
+    <ul>
+        <li *ngFor="let item of gameList" (click)="showGameDetail(item)">{{item.name}}</li>
+    </ul>
+</div>
