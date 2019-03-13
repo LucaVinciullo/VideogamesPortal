@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'VideogamesPortal';
 
   changeSection (id: number){
-    this.idSectionToShow(id);
+    this.idSectionToShow= id;
   }
 }
