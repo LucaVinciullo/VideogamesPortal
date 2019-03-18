@@ -8,9 +8,9 @@ import { GameItem } from 'src/app/model/game-item';
 })
 export class GameListComponent implements OnInit {
   gameList: GameItem[] = [
-    {id: 1, name: 'Terraforming Mars', description: "Terra lorem ipsum", category:"German", rating: 8, prezzo: 49.99, year: 2017},
-    {id: 2, name: 'Dungeons & Dragons', description: "D&D lorem ipsum", category:"Role play", rating: 9, prezzo: 69.99, year: 1980},
-    {id: 3, name: 'Awaken', description: "Awaken lorem ipsum", category:"Role play", rating: 7, prezzo: 34.99, year: 2018}
+    {id: 1, name: 'Terraforming Mars', description: "Terra lorem ipsum", category:"German", rating: 8, price: 49.99, year: 2017},
+    {id: 2, name: 'Dungeons & Dragons', description: "D&D lorem ipsum", category:"Role play", rating: 9, price: 69.99, year: 1980},
+    {id: 3, name: 'Awaken', description: "Awaken lorem ipsum", category:"Role play", rating: 7, price: 34.99, year: 2018}
   ];
 
   @Output('showGameDetail')

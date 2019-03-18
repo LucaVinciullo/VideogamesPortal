@@ -4,6 +4,6 @@ export interface GameItem{
     description: string;
     category:string;
     rating: number;
-    prezzo: number;
+    price: number;
     year: number;
 } 
