@@ -1,6 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
-//import {routes} from 'src/app/app.module';
 
 @Component({
   selector: 'app-menu',
@@ -8,22 +7,27 @@ import { MenuItem } from 'src/app/model/menu-item';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  authentication : boolean = (sessionStorage.getItem('authentication')=='true');
+
   menuList: MenuItem[] = [
     {id: 1, description: 'Home', path: '/home'},
     {id: 2, description: 'Login', path: '/login'},
-    {id: 3, description: 'Lista', path: '/game-list'}, 
-    {id: 4, description: 'Modifica', path: '/game-edit'},
-
-
-    
+    {id: 3, description: 'Lista', path: '/game-list'},  
+    {id: 4, description: 'Modifica', path: '/game-edit'}, 
   ];
 
   @Output('showSection')
   showSectionEvent: EventEmitter<number> = new EventEmitter();
+  
+  getAuthentication(): void {
 
-  constructor() { }
+   }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    this.getAuthentication();
   }
 
   showSection(id: number){

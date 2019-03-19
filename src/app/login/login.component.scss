@@ -1,14 +1,15 @@
-    span {
-        display: inline-block;
-        text-align: left;
-        max-width: 300pt;
-    }
-    
-    input {
-        max-width: 300pt;
-    }
-    
-    #loginForm {
-        display: block;
-        background-color: #f1f1f1;
-    }
+#loginForm {
+    height: 200px;
+    border-radius: 5pt;
+    display: block;
+    background-repeat: no-repeat;
+    //background-attachment: fixed;
+    background-position: center;
+    background-color: #f1f1f1;
+    padding-bottom: 1px;
+}
+
+img {
+    max-width: 50pt;
+    height: auto;
+}
