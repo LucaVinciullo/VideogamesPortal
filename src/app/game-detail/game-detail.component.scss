@@ -1,15 +1,19 @@
 ul {
+    width: 100%;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-div.descriptionList {
-    text-align: left;
-    grid-column: 2;
+li {
+    display: inline-block;
+    background-color: #f1f1f1;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
-#wrapper {
-    display: grid;
-    grid-gap: 5pt;
-    grid-template-columns: 40% 20% 40%;
-    grid-template-rows: auto;
+li:hover {
+    background-color: #555;
+    color: white;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { GameItem } from '../model/game-item';
 
 @Component({
@@ -6,10 +6,12 @@ import { GameItem } from '../model/game-item';
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.scss']
 })
+
 export class GameDetailComponent implements OnInit {
 
   @Input('input-game-for-detail')
   game: GameItem;
+
   constructor() { }
 
   ngOnInit() {

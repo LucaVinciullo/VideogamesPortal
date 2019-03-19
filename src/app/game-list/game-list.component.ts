@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GameItem } from 'src/app/model/game-item';
+import { DataListService } from '../data-list.service';
 
 @Component({
   selector: 'app-game-list',
@@ -7,11 +8,11 @@ import { GameItem } from 'src/app/model/game-item';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-  gameList: GameItem[] = [
-    {id: 1, name: 'Terraforming Mars', description: "Terra lorem ipsum", category:"German", rating: 8, price: 49.99, year: 2017},
-    {id: 2, name: 'Dungeons & Dragons', description: "D&D lorem ipsum", category:"Role play", rating: 9, price: 69.99, year: 1980},
-    {id: 3, name: 'Awaken', description: "Awaken lorem ipsum", category:"Role play", rating: 7, price: 34.99, year: 2018}
-  ];
+  dataList : GameItem[];
+
+  getData():void {
+    this.dataList = this.dataListService.getDataList();
+  }
 
   @Output('showGameDetail')
   showGameEvent: EventEmitter<GameItem> = new EventEmitter();
@@ -20,9 +21,10 @@ export class GameListComponent implements OnInit {
     this.showGameEvent.emit(game);
   }
 
-  constructor() { }
+  constructor(private dataListService: DataListService) { }
 
   ngOnInit() {
+    this.getData();
   }
 
 }

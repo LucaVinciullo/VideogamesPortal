@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GameItem } from '../model/game-item';
+import { DataListService } from '../data-list.service';
 
 @Component({
   selector: 'app-edit-game',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-game.component.scss']
 })
 export class EditGameComponent implements OnInit {
+  dataList : GameItem[];
 
-  constructor() { }
+  getData():void {
+    this.dataList = this.dataListService.getDataList();
+  }
+  
+  constructor(private dataListService : DataListService) { }
 
   ngOnInit() {
+    this.getData();
   }
 
 }
