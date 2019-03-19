@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { GameItem } from '../model/game-item';
 import { ActivatedRoute } from '@angular/router';
-import { DataListService } from '../data-list.service';
+import { DataListService } from '../Services/data-list.service';
 
 @Component({
   selector: 'app-game-detail',

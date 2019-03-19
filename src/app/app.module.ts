@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { StorageServiceModule} from 'angular-webstorage-service';
-
 import { AppComponent } from './app.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
@@ -41,6 +40,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     StorageServiceModule,
+    
     ],
   
   providers: [],

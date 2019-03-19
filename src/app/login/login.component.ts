@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
+import { LoginService } from '../Services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,13 +17,14 @@ saveInLocal(key, val): void {
 
   authenticate(): void{
     if ((this.password=="PASSWORD") && (this.username=="USERNAME")){
-      this.saveInLocal('authentication',true);
+      this.loginService.authenticationTrue();
+      this.loginService.changeSubject();
       this.router.navigateByUrl('/home');
     }
 
   }
 
-  constructor(private route : ActivatedRoute, private router : Router) { }
+  constructor(private loginService: LoginService, private router : Router) { }
 
   ngOnInit() {
   

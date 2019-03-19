@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
+import { LoginService } from '../Services/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -22,8 +23,9 @@ export class MenuComponent implements OnInit {
   getAuthentication(): void {
 
    }
-  constructor() { 
-    
+  constructor(private loginService : LoginService) { 
+    loginService.loginSubject$.subscribe( newValue => {  this.authentication = (sessionStorage.getItem('authentication')=='true');
+  }); 
   }
 
   ngOnInit() {
