@@ -14,6 +14,8 @@ export class EditGameComponent implements OnInit {
     this.dataList = this.dataListService.getDataList();
   }
   
+  searchId(): void {}
+
   constructor(private dataListService : DataListService) { }
 
   ngOnInit() {

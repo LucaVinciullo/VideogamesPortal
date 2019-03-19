@@ -1,12 +1,5 @@
 <app-menu (showSection)="changeSection($event)"> </app-menu>
 
-<div [ngSwitch]="idSectionToShow">
-    <app-home *ngSwitchCase="1"></app-home>
-    <app-game-list *ngSwitchCase="2" (showGameDetail)="selectGame($event)"></app-game-list>
-    <app-game-detail *ngSwitchCase="3" [input-game-for-detail]="gameToShow"></app-game-detail>
-    <app-edit-game *ngSwitchCase="4"></app-edit-game>
-</div>
-
-
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>
