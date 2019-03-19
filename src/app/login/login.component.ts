@@ -11,10 +11,6 @@ export class LoginComponent implements OnInit {
   username: string = 'USERNAME';
   password: string = 'PASSWORD';
 
-saveInLocal(key, val): void {
-  sessionStorage.setItem(key, val);
-   }
-
   authenticate(): void{
     if ((this.password=="PASSWORD") && (this.username=="USERNAME")){
       this.loginService.authenticationTrue();

@@ -13,14 +13,14 @@ export class GameDetailComponent implements OnInit {
 
   @Input('input-game-for-detail')
   game: GameItem;
-  private sub: any;
-  id : number;  
+private sub: any;
+id : number;  
 
   constructor(private route: ActivatedRoute, private dataListService: DataListService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = params['id'];
+    this.id = params['id'];
     });
   this.game = this.dataListService.getGame(this.id);
   }

@@ -13,14 +13,7 @@ export class GameListComponent implements OnInit {
   getData():void {
     this.dataList = this.dataListService.getDataList();
   }
-
-  @Output('showGameDetail')
-  showGameEvent: EventEmitter<GameItem> = new EventEmitter();
   
-  showGameDetail(game: GameItem){
-    this.showGameEvent.emit(game);
-  }
-
   constructor(private dataListService: DataListService) { }
 
   ngOnInit() {

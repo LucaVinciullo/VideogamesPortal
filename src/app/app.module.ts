@@ -11,13 +11,16 @@ import { HomeComponent } from './home/home.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { LoginGuardService } from './Services/login-guard.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'game-list', component: GameListComponent },
-  { path: 'game-detail/:id', component: GameDetailComponent },
-  { path: 'game-edit', component: EditGameComponent},
+  { path: 'game-list', component: GameListComponent, canActivate: [LoginGuardService]  },
+  { path: 'game-detail/:id', component: GameDetailComponent, canActivate: [LoginGuardService] },
+  { path: 'game-edit', component: EditGameComponent, canActivate: [LoginGuardService]},
+  { path: 'logout', component: LogoutComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ]
@@ -32,6 +35,7 @@ const routes: Routes = [
     GameListComponent,
     FooterComponent,
     LoginComponent,
+    LogoutComponent,
 
   ],
   imports: [  

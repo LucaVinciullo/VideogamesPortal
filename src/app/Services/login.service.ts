@@ -5,6 +5,9 @@ import { Subject }    from 'rxjs/Subject';
   providedIn: 'root'
 })
 export class LoginService {
+  logout():void{
+    sessionStorage.setItem('authentication', false);
+  }
 
   authenticationTrue(): void {
     sessionStorage.setItem('authentication', true);

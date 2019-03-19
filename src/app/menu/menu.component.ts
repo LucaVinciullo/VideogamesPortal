@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
     {id: 2, description: 'Login', path: '/login'},
     {id: 3, description: 'Lista', path: '/game-list'},  
     {id: 4, description: 'Modifica', path: '/game-edit'}, 
+    {id: 5, description: 'Logout', path: '/logout'} 
   ];
 
   @Output('showSection')
