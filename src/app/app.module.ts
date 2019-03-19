@@ -15,8 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'game-list', component: GameListComponent },
-  { path: 'game-detail', component: GameDetailComponent },
+  { path: 'game-detail/:id', component: GameDetailComponent },
   { path: 'game-edit', component: EditGameComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ]
 

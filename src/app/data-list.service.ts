@@ -5,6 +5,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataListService {
   
   private list: GameItem[] = [
@@ -15,6 +16,10 @@ export class DataListService {
 
   getDataList(): GameItem[] {
     return this.list;
+  }
+
+  getGame( i: number) : GameItem{
+    return this.list[(i-1)];
   }
 
   public getInstance() : DataListService{
