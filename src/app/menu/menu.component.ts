@@ -10,8 +10,12 @@ import { MenuItem } from 'src/app/model/menu-item';
 export class MenuComponent implements OnInit {
   menuList: MenuItem[] = [
     {id: 1, description: 'Home', path: '/home'},
-    {id: 2, description: 'Lista', path: '/game-list'}, 
-    {id: 4, description: 'Modifica', path: '/game-edit'}
+    {id: 2, description: 'Login', path: '/login'},
+    {id: 3, description: 'Lista', path: '/game-list'}, 
+    {id: 4, description: 'Modifica', path: '/game-edit'},
+
+
+    
   ];
 
   @Output('showSection')

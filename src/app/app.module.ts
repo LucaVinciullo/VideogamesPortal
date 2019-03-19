@@ -11,9 +11,11 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'game-list', component: GameListComponent },
   { path: 'game-detail/:id', component: GameDetailComponent },
   { path: 'game-edit', component: EditGameComponent},
@@ -30,6 +32,7 @@ const routes: Routes = [
     HomeComponent,
     GameListComponent,
     FooterComponent,
+    LoginComponent,
 
   ],
   imports: [  
