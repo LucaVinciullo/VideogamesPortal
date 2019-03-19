@@ -12,17 +12,18 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    FormsModule,
     AppComponent,
     EditGameComponent,
     GameDetailComponent,
     MenuComponent,
     HomeComponent,
     GameListComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
