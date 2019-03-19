@@ -31,14 +31,12 @@ const routes: Routes = [
     FooterComponent,
 
   ],
-  imports: [
+  imports: [  
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes) 
+    RouterModule.forRoot(routes),
+      
     ],
-  exports: [
-    RouterModule
-  ],
   
   providers: [],
   bootstrap: [AppComponent]
