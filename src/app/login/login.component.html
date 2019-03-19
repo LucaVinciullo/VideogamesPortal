@@ -1,3 +1,11 @@
-<p>
-  login works!
-</p>
+<div>
+    <div>
+        <div>
+            <p><span>Username</span> <br/>
+                <input [(ngModel)]="username"></p>
+            <p><span>Password</span> <br/>
+                <input type="password" [(ngModel)]="password"></p>
+        </div>
+        <p><button (click)="authenticate()">Cerca</button></p>
+    </div>
+</div>
