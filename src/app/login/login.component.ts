@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     }
 
     if ((this.password=="ADMIN") && (this.username=="ADMINISTRATOR")){
-      this.loginService.authenticationTrue(this.username);
+      this.loginService.authenticationAdministrator(this.username);
       this.loginService.changeSubject();
       this.router.navigateByUrl('/home');
     }

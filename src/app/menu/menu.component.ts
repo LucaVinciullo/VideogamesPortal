@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
 import { LoginService } from '../Services/login.service';
 
