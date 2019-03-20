@@ -9,6 +9,9 @@ import { LoginService } from '../Services/login.service';
 })
 export class MenuComponent implements OnInit {
   authentication : boolean = (sessionStorage.getItem('authentication')=='true');
+  adminAuthentication: boolean = (sessionStorage.getItem('adminAuthentication')=='true');
+  username : string = (sessionStorage.getItem('username'));
+
 
   menuList: MenuItem[] = [
     {id: 1, description: 'Home', path: '/home'},
@@ -18,14 +21,14 @@ export class MenuComponent implements OnInit {
     {id: 5, description: 'Logout', path: '/logout'} 
   ];
 
-  @Output('showSection')
-  showSectionEvent: EventEmitter<number> = new EventEmitter();
   
   getAuthentication(): void {
 
    }
   constructor(private loginService : LoginService) { 
-    loginService.loginSubject$.subscribe( newValue => {  this.authentication = (sessionStorage.getItem('authentication')=='true');
+    loginService.loginSubject$.subscribe( newValue => {  
+      this.authentication = sessionStorage.getItem('authentication')=='true';
+      this.username = sessionStorage.getItem('username');
   }); 
   }
 
@@ -33,7 +36,4 @@ export class MenuComponent implements OnInit {
     this.getAuthentication();
   }
 
-  showSection(id: number){
-    this.showSectionEvent.emit(id);
-  }
 }

@@ -7,11 +7,13 @@ import { Subject }    from 'rxjs/Subject';
 export class LoginService {
   logout():void{
     sessionStorage.setItem('authentication', 'false');
+    sessionStorage.setItem('username', null);
   }
 
-  authenticationTrue(): void {
+  authenticationTrue(username: string): void {
     sessionStorage.setItem('authentication', 'true');
-     }
+    sessionStorage.setItem('username', username);
+  }
 
   private loginSubject = new Subject<void>();
   public loginSubject$ = this.loginSubject.asObservable();

@@ -15,7 +15,8 @@ li {
 
 div.header {
     background-color: #e5e5e5;
-    padding: 15px;
+    padding: 10px;
+    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -25,4 +26,9 @@ div.header {
 li:hover {
     background-color: #555;
     color: white;
+}
+
+#salutation {
+    float: right;
+    padding: 4pt 8pt;
 }

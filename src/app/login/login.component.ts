@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   authenticate(): void{
     if ((this.password=="PASSWORD") && (this.username=="USERNAME")){
-      this.loginService.authenticationTrue();
+      this.loginService.authenticationTrue(this.username);
       this.loginService.changeSubject();
       this.router.navigateByUrl('/home');
     }
