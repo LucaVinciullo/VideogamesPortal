@@ -6,11 +6,11 @@ import { Subject }    from 'rxjs/Subject';
 })
 export class LoginService {
   logout():void{
-    sessionStorage.setItem('authentication', false);
+    sessionStorage.setItem('authentication', 'false');
   }
 
   authenticationTrue(): void {
-    sessionStorage.setItem('authentication', true);
+    sessionStorage.setItem('authentication', 'true');
      }
 
   private loginSubject = new Subject<void>();

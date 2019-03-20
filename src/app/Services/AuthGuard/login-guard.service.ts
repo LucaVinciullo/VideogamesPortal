@@ -14,8 +14,6 @@ export class LoginGuardService implements CanActivate{
    return this.result;
   }
 
-  canDeactivate(){
-    this.result = (sessionStorage.getItem('authentication')=='false')
-  }
+
   constructor() { }
 }

@@ -12,11 +12,12 @@ import { GameListComponent } from './game-list/game-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
-import { LoginGuardService } from './Services/login-guard.service';
+import { LoginGuardService } from './Services/AuthGuard/login-guard.service';
+import { LogoutGuardService } from './Services/AuthGuard/logout-guard.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LogoutGuardService] },
   { path: 'game-list', component: GameListComponent, canActivate: [LoginGuardService]  },
   { path: 'game-detail/:id', component: GameDetailComponent, canActivate: [LoginGuardService] },
   { path: 'game-edit', component: EditGameComponent, canActivate: [LoginGuardService]},
