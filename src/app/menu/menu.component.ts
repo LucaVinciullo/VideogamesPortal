@@ -9,7 +9,7 @@ import { LoginService } from '../Services/login.service';
 })
 export class MenuComponent implements OnInit {
   authentication : boolean = (sessionStorage.getItem('authentication')=='true');
-  adminAuthentication: boolean = (sessionStorage.getItem('adminAuthentication')=='true');
+  adminAuthentication: boolean = (sessionStorage.getItem('administrator')=='true');
   username : string = (sessionStorage.getItem('username'));
 
 
@@ -27,8 +27,9 @@ export class MenuComponent implements OnInit {
    }
   constructor(private loginService : LoginService) { 
     loginService.loginSubject$.subscribe( newValue => {  
-      this.authentication = sessionStorage.getItem('authentication')=='true';
+      this.authentication = (sessionStorage.getItem('authentication')=='true');
       this.username = sessionStorage.getItem('username');
+      this.adminAuthentication = (sessionStorage.getItem('administrator') == 'true');
   }); 
   }
 

@@ -7,7 +7,9 @@
             <ng-container *ngFor="let item of menuList">
                 <ng-container *ngIf="authentication || item.description=='Login' || item.description=='Home'">
                     <ng-container *ngIf="!(authentication && item.description=='Login')">
-                        <li routerLink={{item.path}}>{{ item.description }}</li>
+                        <ng-container *ngIf="!(adminAuthentication && item.description=='Modifica')">
+                            <li routerLink={{item.path}}>{{ item.description }}</li>
+                        </ng-container>
                     </ng-container>
                 </ng-container>
 

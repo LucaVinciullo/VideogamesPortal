@@ -7,11 +7,19 @@ import { Subject }    from 'rxjs/Subject';
 export class LoginService {
   logout():void{
     sessionStorage.setItem('authentication', 'false');
+    sessionStorage.setItem('administrator', 'false');
     sessionStorage.setItem('username', null);
   }
 
   authenticationTrue(username: string): void {
     sessionStorage.setItem('authentication', 'true');
+    sessionStorage.setItem('administrator', 'false');
+    sessionStorage.setItem('username', username);
+  }
+
+  authenticationAdministrator(username: string): void {
+    sessionStorage.setItem('authentication', 'true');
+    sessionStorage.setItem('administrator', 'true');
     sessionStorage.setItem('username', username);
   }
 
@@ -21,8 +29,6 @@ export class LoginService {
   changeSubject() { 
     this.loginSubject.next(); 
   }
-
-
 
   constructor() { }
 }
