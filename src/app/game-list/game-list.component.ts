@@ -10,11 +10,13 @@ import { DataListService } from 'src/app/Services/Data/data-list.service';
 export class GameListComponent implements OnInit {
   dataList : GameItem[];
 
+
   getData():void {
     this.dataList = this.dataListService.getDataList();
+
   }
   
-  constructor(private dataListService: DataListService) { }
+  constructor(private dataListService: DataListService, ) { }
 
   ngOnInit() {
     this.getData();
