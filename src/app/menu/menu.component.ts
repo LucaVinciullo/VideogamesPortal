@@ -7,11 +7,12 @@ import { LoginService } from '../Services/login.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
+
 export class MenuComponent implements OnInit {
   authentication : boolean = (sessionStorage.getItem('authentication')=='true');
   adminAuthentication: boolean = (sessionStorage.getItem('administrator')=='true');
   username : string = (sessionStorage.getItem('username'));
-
+ 
 
   menuList: MenuItem[] = [
     {id: 1, description: 'Home', path: '/home'},

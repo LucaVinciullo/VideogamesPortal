@@ -7,14 +7,16 @@
                 <ng-container *ngIf="authentication || item.description=='Login' || item.description=='Home'">
                     <ng-container *ngIf="!(authentication && item.description=='Login')">
                         <ng-container *ngIf="!(!adminAuthentication && item.description=='Modifica')">
+
                             <li routerLink={{item.path}}>{{ item.description }}</li>
+
                         </ng-container>
                     </ng-container>
                 </ng-container>
 
             </ng-container>
         </ul>
-        <ng-container *ngIf="username!='null'">
+        <ng-container *ngIf="username!='null' && username!=null">
             <span id='salutation'>Bentrovato {{username}}</span>
         </ng-container>
     </div>
