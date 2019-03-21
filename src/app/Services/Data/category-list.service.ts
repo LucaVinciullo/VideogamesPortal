@@ -12,6 +12,7 @@ export class CategoryListService {
     { id: 3, description: "Gestionale"},
     { id: 4, description: "Interazione sociale"},
     { id: 5, description: "Party Game"},
+    { id: 6, description: "Carte"},
   ];
 
   getList(): CategoryItem[] {

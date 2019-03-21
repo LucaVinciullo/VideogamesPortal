@@ -1,4 +1,10 @@
 <div class="container">
+
+    <select>
+            <option selected="selected" value="null">Tutti</option>
+            <option *ngFor="let item of categoryList, let i = index" value="i">{{item.description}}</option>
+    </select>
+
     <ul>
         <li *ngFor="let item of dataList" [routerLink]="['/game-detail', item.id]">{{item.name}}</li>
     </ul>

@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GameItem } from 'src/app/model/game-item';
 import { DataListService } from 'src/app/Services/Data/data-list.service';
+import { CategoryItem } from 'src/app/model/category-item';
+import { CategoryListService} from '../Services/Data/category-list.service';
 
 @Component({
   selector: 'app-game-list',
@@ -9,14 +11,14 @@ import { DataListService } from 'src/app/Services/Data/data-list.service';
 })
 export class GameListComponent implements OnInit {
   dataList : GameItem[];
-
+  categoryList : CategoryItem[];
 
   getData():void {
     this.dataList = this.dataListService.getDataList();
-
+    this.categoryList = this.categoryListService.getList();
   }
   
-  constructor(private dataListService: DataListService, ) { }
+  constructor(private dataListService: DataListService, private categoryListService : CategoryListService ) { }
 
   ngOnInit() {
     this.getData();
