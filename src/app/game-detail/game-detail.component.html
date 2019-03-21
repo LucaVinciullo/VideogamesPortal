@@ -9,7 +9,7 @@
         <div>Prezzo: {{game.price}} €</div>
         <div>Anno: {{game.year}}</div>
     </div>
-    <ng-container *ngIf="true">
+    <ng-container *ngIf="adminAuthentication">
         <p><button>Modifica</button></p>
     </ng-container>
 </div>

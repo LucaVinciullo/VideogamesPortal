@@ -17,3 +17,20 @@ li:hover {
     background-color: #555;
     color: white;
 }
+
+button {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    border-radius: 4px;
+    border-style: outset;
+    padding: 4px 8px;
+}
+
+input {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    border-style: inset;
+    padding: 2px 4px;
+}
+
+label {
+    padding: 2px 4px;
+}
