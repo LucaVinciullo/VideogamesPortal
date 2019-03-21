@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GameItem } from '../model/game-item';
 import { ActivatedRoute } from '@angular/router';
-import { DataListService } from '../Services/data-list.service';
+import { DataListService } from 'src/app/Services/Data/data-list.service';
 import { LoginService } from '../Services/login.service';
 
 @Component({

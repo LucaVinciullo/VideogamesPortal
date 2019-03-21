@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GameItem } from 'src/app/model/game-item';
-import { DataListService } from '../Services/data-list.service';
+import { DataListService } from 'src/app/Services/Data/data-list.service';
 
 @Component({
   selector: 'app-game-list',
