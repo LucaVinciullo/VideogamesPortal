@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GameItem } from '../model/game-item';
-import { DataListService } from '../data-list.service';
+import { DataListService } from 'src/app/Services/Data/data-list.service';
 
 @Component({
   selector: 'app-edit-game',
