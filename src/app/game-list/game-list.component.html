@@ -1,12 +1,13 @@
 <div class="container">
     <div>
-        <select type="number" [(ngModel)]="categoryValue">
-            <option selected="selected">Tutti</option>
+        <select type="number" [(ngModel)]="categoryValue" (ngModelChange)="filterList($event)">
+            <option selected="selected" [ngValue]="-1">Tutti</option>
             <option *ngFor="let category of categoryList" [ngValue]="category.id">{{category.description}}</option>
     </select> {{categoryValue}}
     </div>
 
-    <div style="border:1px solid black">
+    <!--
+        <div>
         <h3>Filtro mediante ng-container</h3>
         <ul>
             <ng-container *ngFor="let item of dataList">
@@ -16,9 +17,10 @@
             </ng-container>
         </ul>
     </div>
-    <div style="border:1px solid black">
-        <h3> Filtro mediante filtrazione della lista</h3>
-        <ul>
-            <li *ngFor="let item of (dataList | categoryFilter)" [routerLink]="['/game-detail', item.id]">{{item.name}}</li>
-        </ul>
-    </div>
+    <div>
+    -->
+    <h3> Filtro mediante filtrazione della lista</h3>
+    <ul>
+        <li *ngFor="let item of filteredList" [routerLink]="['/game-detail', item.id]">{{item.name}}</li>
+    </ul>
+</div>

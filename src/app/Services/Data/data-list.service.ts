@@ -36,6 +36,13 @@ export class DataListService {
     return this.list[(i-1)];
   }
 
+  getFilteredList(list: GameItem[], category: number): GameItem[]{
+  list = list.filter( item => {
+    return item.category == category
+  });
+  return list;
+  }
+
   constructor() { 
 
   }

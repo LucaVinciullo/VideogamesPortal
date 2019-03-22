@@ -11,19 +11,28 @@ import { CategoryListService} from '../Services/Data/category-list.service';
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.scss']
 })
-export class GameListComponent implements OnInitng {
+
+export class GameListComponent implements OnInit {
   dataList : GameItem[];
+  filteredList : GameItem[];
   categoryList : CategoryItem[];
   category: CategoryItem;
   categoryValue:number;
-  priorCategoryValue : number = -1;
 
   getData():void {
     this.dataList = this.dataListService.getDataList();
     this.categoryList = this.categoryListService.getList();
-
+    this.filteredList = this.dataList;
   }
   
+  filterList():void {
+    if (this.categoryValue == (-1)){
+      this.filteredList = this.dataList;
+  } else {
+    this.filteredList = this.dataListService.getFilteredList(this.dataList, this.categoryValue);
+  }
+  };
+
   constructor(private dataListService: DataListService, private categoryListService : CategoryListService) { 
     this.getData(); 
   }
