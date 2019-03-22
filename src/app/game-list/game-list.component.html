@@ -1,11 +1,24 @@
 <div class="container">
+    <div>
+        <select type="number" [(ngModel)]="categoryValue">
+            <option selected="selected">Tutti</option>
+            <option *ngFor="let category of categoryList" [ngValue]="category.id">{{category.description}}</option>
+    </select> {{categoryValue}}
+    </div>
 
-    <select>
-            <option selected="selected" value="null">Tutti</option>
-            <option *ngFor="let item of categoryList, let i = index" value="i">{{item.description}}</option>
-    </select>
-
-    <ul>
-        <li *ngFor="let item of dataList" [routerLink]="['/game-detail', item.id]">{{item.name}}</li>
-    </ul>
-</div>
+    <div style="border:1px solid black">
+        <h3>Filtro mediante ng-container</h3>
+        <ul>
+            <ng-container *ngFor="let item of dataList">
+                <ng-container *ngIf="item.category == categoryValue">
+                    <li [routerLink]="['/game-detail', item.id]">{{item.name}}</li>
+                </ng-container>
+            </ng-container>
+        </ul>
+    </div>
+    <div style="border:1px solid black">
+        <h3> Filtro mediante filtrazione della lista</h3>
+        <ul>
+            <li *ngFor="let item of (dataList | categoryFilter)" [routerLink]="['/game-detail', item.id]">{{item.name}}</li>
+        </ul>
+    </div>
