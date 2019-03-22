@@ -14,9 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { LoginGuardService } from './Services/AuthGuard/login-guard.service';
 import { LogoutGuardService } from './Services/AuthGuard/logout-guard.service';
+import { MouseEnterDirective } from './directives/mouse-enter.directive';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent, canActivate: [LogoutGuardService] },
   { path: 'game-list', component: GameListComponent, canActivate: [LoginGuardService]  },
   { path: 'game-detail/:id', component: GameDetailComponent, canActivate: [LoginGuardService] },
@@ -37,6 +38,7 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     LogoutComponent,
+    MouseEnterDirective,
 
   ],
   imports: [  
@@ -44,8 +46,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     BrowserModule,
-    StorageServiceModule,
-    
+    StorageServiceModule,   
     ],
   
   providers: [],

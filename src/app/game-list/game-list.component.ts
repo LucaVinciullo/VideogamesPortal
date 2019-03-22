@@ -3,6 +3,7 @@ import { GameItem } from 'src/app/model/game-item';
 import { DataListService } from 'src/app/Services/Data/data-list.service';
 import { CategoryItem } from 'src/app/model/category-item';
 import { CategoryListService} from '../Services/Data/category-list.service';
+import { MouseEnterDirective } from '../directives/mouse-enter.directive'
 
 
 
