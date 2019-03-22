@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { LoginGuardService } from './Services/AuthGuard/login-guard.service';
 import { LogoutGuardService } from './Services/AuthGuard/logout-guard.service';
 import { MouseEnterDirective } from './directives/mouse-enter.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
@@ -39,14 +40,15 @@ const routes: Routes = [
     LoginComponent,
     LogoutComponent,
     MouseEnterDirective,
-
+    
   ],
   imports: [  
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     BrowserModule,
-    StorageServiceModule,   
+    StorageServiceModule,  
+    ReactiveFormsModule  
     ],
   
   providers: [],

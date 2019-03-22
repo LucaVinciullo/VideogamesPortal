@@ -4,6 +4,7 @@ import { DataListService } from 'src/app/Services/Data/data-list.service';
 import { CategoryItem } from 'src/app/model/category-item';
 import { CategoryListService} from '../Services/Data/category-list.service';
 import { MouseEnterDirective } from '../directives/mouse-enter.directive'
+import { FormControl } from '@angular/forms';
 
 
 
@@ -19,6 +20,7 @@ export class GameListComponent implements OnInit {
   categoryList : CategoryItem[];
   category: CategoryItem;
   categoryValue:number;
+  login = new FormControl('');
 
   getData():void {
     this.dataList = this.dataListService.getDataList();
