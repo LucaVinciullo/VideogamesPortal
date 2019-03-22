@@ -5,5 +5,6 @@ export interface GameItem{
     category:number;
     rating: number;
     price: number;
-    year: number;
+    amount: number;  
+    releaseDate: Date;
 } 

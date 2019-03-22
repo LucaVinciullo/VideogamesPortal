@@ -6,8 +6,9 @@
         <div>{{game.description}}</div>
         <div>Categoria: {{category}}</div>
         <div>Rating: {{game.rating}}</div>
-        <div>Prezzo: {{game.price}} €</div>
-        <div>Anno: {{game.year}}</div>
+        <div>Prezzo: {{game.price | currency:'EUR':'symbol':'1.2-2'}}</div>
+        <div>Disponibilità: {{game.amount}} pezzi</div>
+        <div>Rilascio: {{game.releaseDate | date:'dd MM yy'}}</div>
     </div>
     <ng-container *ngIf="adminAuthentication">
         <p><button>Modifica</button></p>
