@@ -1,0 +1,27 @@
+<form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+
+    <form [formGroup]="search" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+          Id del Gioco:
+          <input type="text" formControlName="gameId" >
+        </label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>
+        <label>
+      Nome del Gioco:
+      <input type="text" formControlName="gameName" required>
+    </label>
+    </div>
+
+    <div>
+        <label>
+      Descrizione del Gioco:
+      <input type="text" formControlName="gameDescription" required>
+    </label>
+    </div>
+    <button type="submit" [disabled]="!gameForm.valid">Submit</button>
+</form>

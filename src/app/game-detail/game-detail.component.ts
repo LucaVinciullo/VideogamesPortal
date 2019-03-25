@@ -23,9 +23,7 @@ export class GameDetailComponent implements OnInit {
       this.adminAuthentication = (sessionStorage.getItem('administrator') == 'true');
   });
 
-  this.sub = this.route.params.subscribe(params => {
-    this.id = params['id'];
-    });
+  this.id = this.route.snapshot.params['id'];
   this.game = this.dataListService.getGame(this.id);
   this.category = this.categoryListService.getItem(this.game.category);
   }

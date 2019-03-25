@@ -16,7 +16,8 @@ import { LoginGuardService } from './Services/AuthGuard/login-guard.service';
 import { LogoutGuardService } from './Services/AuthGuard/logout-guard.service';
 import { MouseEnterDirective } from './directives/mouse-enter.directive';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EditFormComponent } from './edit-form/edit-form.component';
+import { GameEditorComponent } from './game-editor/game-editor.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
@@ -41,7 +42,8 @@ const routes: Routes = [
     LoginComponent,
     LogoutComponent,
     MouseEnterDirective,
-    EditFormComponent,
+    GameEditorComponent,
+    NameEditorComponent,
     
   ],
   imports: [  
